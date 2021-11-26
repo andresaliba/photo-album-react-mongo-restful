@@ -3,6 +3,7 @@ let cors = require("cors");
 let path = require("path");
 let MongoClient = require("mongodb").MongoClient;
 let sanitizer = require("express-sanitizer");
+let ObjectId = require("mongodb").ObjectId;
 // MongoDB constants
 const URL = "mongodb://mongo:27017/";
 const DB_NAME = "dbPhotoAlbum";
@@ -20,10 +21,6 @@ app.use(sanitizer());
 const CLIENT_BUILD_PATH = path.join(__dirname, "./../../client/build");
 // adding middleware to define static files location
 app.use("/", express.static(CLIENT_BUILD_PATH));
-
-app.get("/"), (req, res) => {
-    res.send("HELLO IS THIS WORKING");
-}
 
 app.get("/get", async (request, response) => {
   // construct a MongoClient object, passing in additional options
@@ -54,18 +51,63 @@ app.get("/get", async (request, response) => {
 app.post("/comment", async (request, response) => {
   // construct a MongoClient object, passing in additional options
   let mongoClient = new MongoClient(URL, { useUnifiedTopology: true });
+  // let id = new ObjectId(request.body._id);
   try {
-    await mongoClient.connect();
+      await mongoClient.connect();
+      console.log(request.body);
     // sanitize form input
-    request.body.comments.forEach(comment => {
-        comment.comment = request.sanitize(comment.comment);
-        comment.author = request.sanitize(comment.author);
-    })
-    // get reference to collection
+    request.body.id = request.sanitize(request.body.id);
+    request.body.author = request.sanitize(request.body.author);
+    request.body.comment = request.sanitize(request.body.comment);
+    
+    // request.body.comments.forEach(comment => {
+    //     comment.comment = request.sanitize(comment.comment);
+    //     comment.author = request.sanitize(comment.author);
+    // });
+
+    // let db = mongoClient.db(DB_NAME);
+
+    // let databaseID = await db
+    //                 .collection("photos")
+    //                 .find({id:commentID})
+    //                 .toArray();
+
+    // let objectID = new ObjectId(databaseID);
+
     let commentsCollection = mongoClient.db(DB_NAME).collection("photos");
-    // add new technology document into collection
-    let result = await commentsCollection.insertOne(request.body);
-    // status code
+
+    // let objectID = commentsCollection.find({id:commentID}).toArray();
+
+    // let newValues = { $push : { 
+    //                             commentsCollection.comments : comment, 
+    //                             comments.author : author
+    //                         } 
+    //                 };
+    let newValues = { $set : request.body};
+    // let result = await commentsCollection.updateOne({objectID, "comment"}, { $set : {"$comment" : request.body.comment}, {"$author":request.body.author} });
+    let result = await commentsCollection.updateOne({"id": request.body.id},
+                                                        {"$push":{
+                                                              "comments": {
+                                                                "comment": request.body.comment,
+                                                                "author": request.body.author
+                                                              }
+                                                            }
+                                                        }
+                                                    );
+                                                    
+    // let result = await commentsCollection.updateOne(
+    //                                             {"_id": objectID}, 
+    //                                               {$push: 
+    //                                                 {"comments": 
+    //                                                   {
+    //                                                     "comment": userComment
+    //                                                     "author": userAuthor
+    //                                                   }
+    //                                                 }
+    //                                               }
+    //                                             );
+
+
     response.status(200);
     response.send(result);
   } catch (error) {
@@ -83,3 +125,31 @@ app.use((request, response) => {
 });
 
 app.listen(8080, () => console.log("Listening on port 8080"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// I SPENT 6 HOURS ON THE GOD DAMN PUT REQUEST

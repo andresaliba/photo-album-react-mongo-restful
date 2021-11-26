@@ -30,10 +30,12 @@ const Comments = ({photos, currentPhoto, refreshJSON, setLoading}:CommentProps) 
         };
         setErrorMsg(false);
         let comment = {
-            "_id": photos[currentPhoto].id,
+            "id": photos[currentPhoto].id,
             "author": userAuthor,
             "comment": userComment
         };
+        console.log(comment);
+        
         
         // converting the json to a string
         let sendString = JSON.stringify(comment);
