@@ -100,8 +100,8 @@ app.post("/comment", async (request, response) => {
     //                                               {$push: 
     //                                                 {"comments": 
     //                                                   {
-    //                                                     "comment": userComment
-    //                                                     "author": userAuthor
+    //                                                     "comment": request.body.comment
+    //                                                     "author": request.body.author
     //                                                   }
     //                                                 }
     //                                               }
@@ -125,6 +125,62 @@ app.use((request, response) => {
 });
 
 app.listen(8080, () => console.log("Listening on port 8080"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
