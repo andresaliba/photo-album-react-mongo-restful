@@ -77,6 +77,7 @@ const App = () => {
 
   // --------------------------------------------------------------------- lifecycle hooks
   useEffect(() => {
+    // getJSONData(PHOTOS_WEB_API, onResponse, onError);
     // component mounted - loading JSON data when root component mounts
     refreshJSON();
   }, []);
@@ -96,10 +97,10 @@ const App = () => {
       {/* Navegation Buttons */}
       <div className="nav">
         <div className="nav--controls">
-            <button className="btn btn-round btn-blue" type="button" id="btnPrevious" onClick={getPrevious} disabled={currentPhoto !== 0 ? false : true}>Previous</button>
-            <button className="btn btn-blue" type="button" id="btnNext" onClick={getNext} disabled={currentPhoto !== photos.length - 1 ? false : true }>Next</button>
-            <button className="btn btn-yellow" type="button" id="btnJump" onClick={getJump}>Jump</button>
-            <button className="btn btn-yellow" type="button" id="btnComment" onClick={getComment}>Comment</button>
+            <button className="btn btn-round btn-blue" type="button" id="btnPrevious" onClick={getPrevious} disabled={photos.length == 0 ? true : currentPhoto !== 0 ? false : true}>Previous</button>
+            <button className="btn btn-blue" type="button" id="btnNext" onClick={getNext} disabled={photos.length == 0 ? true : currentPhoto !== photos.length - 1 ? false : true }>Next</button>
+            <button className="btn btn-yellow" type="button" id="btnJump" onClick={getJump} disabled={photos.length == 0 ? true : false}>Jump</button>
+            <button className="btn btn-yellow" type="button" id="btnComment" onClick={getComment} disabled={photos.length == 0 ? true : false}>Comment</button>
             <div className="nav--counter" id="lblCounter">Photo {currentPhoto + 1} of {photos.length}</div>
         </div>
 
@@ -129,6 +130,13 @@ const App = () => {
           source={photos[currentPhoto].source} 
           comments={photos[currentPhoto].comments} 
         />
+        // <Content 
+        //   id={photos[currentPhoto].id} 
+        //   title={photos[currentPhoto].title} 
+        //   caption={photos[currentPhoto].caption} 
+        //   source={photos[currentPhoto].source} 
+        //   comments={photos[currentPhoto].comments} 
+        // />
       ) : (
         //  Display warning
         <div className="warning">

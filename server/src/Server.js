@@ -35,6 +35,10 @@ app.get("/get", async (request, response) => {
         .sort("id", 1)
         .toArray();
     let json = { "photos": photoArray};
+
+    // test for empty photo album <---
+    // let json = { "photos": []};
+
     console.log(json);
     // serializes sampleJSON to string format
     response.status(200);
@@ -59,32 +63,8 @@ app.post("/comment", async (request, response) => {
     request.body.id = request.sanitize(request.body.id);
     request.body.author = request.sanitize(request.body.author);
     request.body.comment = request.sanitize(request.body.comment);
-    
-    // request.body.comments.forEach(comment => {
-    //     comment.comment = request.sanitize(comment.comment);
-    //     comment.author = request.sanitize(comment.author);
-    // });
-
-    // let db = mongoClient.db(DB_NAME);
-
-    // let databaseID = await db
-    //                 .collection("photos")
-    //                 .find({id:commentID})
-    //                 .toArray();
-
-    // let objectID = new ObjectId(databaseID);
-
     let commentsCollection = mongoClient.db(DB_NAME).collection("photos");
-
-    // let objectID = commentsCollection.find({id:commentID}).toArray();
-
-    // let newValues = { $push : { 
-    //                             commentsCollection.comments : comment, 
-    //                             comments.author : author
-    //                         } 
-    //                 };
     let newValues = { $set : request.body};
-    // let result = await commentsCollection.updateOne({objectID, "comment"}, { $set : {"$comment" : request.body.comment}, {"$author":request.body.author} });
     let result = await commentsCollection.updateOne({"id": request.body.id},
                                                         {"$push":{
                                                               "comments": {
@@ -125,87 +105,3 @@ app.use((request, response) => {
 });
 
 app.listen(8080, () => console.log("Listening on port 8080"));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// I SPENT 6 HOURS ON THE GOD DAMN PUT REQUEST

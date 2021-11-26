@@ -63,7 +63,7 @@ const Comments = ({photos, currentPhoto, refreshJSON, setLoading}:CommentProps) 
     return (
         <div className="nav--comment">
             <label>Author:</label> <br></br>
-            <input className="nav--textbox" type="text" onChange={updateAuthor} value={userAuthor}></input> <br></br>
+            <input className="nav--textbox" type="text" onChange={updateAuthor} value={userAuthor} maxLength={20}></input> <br></br>
             <label>Comment (200 Characters):</label> <br></br>
             <textarea className="nav--textbox" onChange={updateComment} value={userComment} maxLength={200} rows={10} cols={25}></textarea> <br></br>
             <input className="comment--submit" type="submit" value="Submit Comment" disabled={userComment !== "" ? false : true } onClick={sendComment}/> <br></br>

@@ -48,6 +48,15 @@
   // padding-top: 10px;
 }
 
+
+
+.thumbnail--photo {
+  :hover {
+    background: darken(red, 8%);
+    transition: all 0.3s ease;
+  }
+}
+
 .btn {
 
   border: none;
@@ -65,6 +74,11 @@ button[disabled]{
   border: #999999;
   background-color: #cccccc;
   color: #666666;
+  cursor: not-allowed;
+  pointer-events: none;
+  &:hover {
+    pointer-events: none;
+  }
 }
 
 .btn-blue {
