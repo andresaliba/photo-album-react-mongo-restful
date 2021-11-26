@@ -5,7 +5,7 @@ import { CommentProps } from "../tools/photos.model";
 // Toolkit
 import { sendJSONData } from "../tools/Toolkit";
 
-const SEND_SCRIPT: string = "http://localhost/addComment.php";
+const SEND_SCRIPT: string = "http://localhost:8080/comment";
 
 const Comments = ({photos, currentPhoto, refreshJSON, setLoading}:CommentProps) => {
 
@@ -30,7 +30,7 @@ const Comments = ({photos, currentPhoto, refreshJSON, setLoading}:CommentProps) 
         };
         setErrorMsg(false);
         let comment = {
-            "photoId": photos[currentPhoto].id,
+            "_id": photos[currentPhoto].id,
             "author": userAuthor,
             "comment": userComment
         };

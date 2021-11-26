@@ -21,6 +21,10 @@ const CLIENT_BUILD_PATH = path.join(__dirname, "./../../client/build");
 // adding middleware to define static files location
 app.use("/", express.static(CLIENT_BUILD_PATH));
 
+app.get("/"), (req, res) => {
+    res.send("HELLO IS THIS WORKING");
+}
+
 app.get("/get", async (request, response) => {
   // construct a MongoClient object, passing in additional options
   let mongoClient = new MongoClient(URL, { useUnifiedTopology: true });
@@ -29,11 +33,12 @@ app.get("/get", async (request, response) => {
     // get reference to database via name
     let db = mongoClient.db(DB_NAME);
     let photoArray = await db
-      .collection("photos")
-      .find()
-      .sort("name", 1)
-      .toArray();
-    let json = { photos: photoArray };
+        .collection("photos")
+        .find()
+        .sort("id", 1)
+        .toArray();
+    let json = { "photos": photoArray};
+    console.log(json);
     // serializes sampleJSON to string format
     response.status(200);
     response.send(json);
@@ -46,15 +51,16 @@ app.get("/get", async (request, response) => {
   }
 });
 
-app.post("/post", async (request, response) => {
+app.post("/comment", async (request, response) => {
   // construct a MongoClient object, passing in additional options
   let mongoClient = new MongoClient(URL, { useUnifiedTopology: true });
   try {
     await mongoClient.connect();
     // sanitize form input
-    request.body._id = request.sanitize(request.body._id);
-    request.body.comment = request.sanitize(request.body.comment);
-    request.body.author = request.sanitize(request.body.author);
+    request.body.comments.forEach(comment => {
+        comment.comment = request.sanitize(comment.comment);
+        comment.author = request.sanitize(comment.author);
+    })
     // get reference to collection
     let commentsCollection = mongoClient.db(DB_NAME).collection("photos");
     // add new technology document into collection
