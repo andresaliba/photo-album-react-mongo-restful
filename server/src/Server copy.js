@@ -2,7 +2,6 @@ let express = require("express");
 let cors = require('cors');
 let path = require('path');
 let MongoClient = require("mongodb").MongoClient;
-
 let sanitizer = require("express-sanitizer");
 let ObjectId = require("mongodb").ObjectId;
 
@@ -33,8 +32,8 @@ app.get("/get", async (request, response) => {
         await mongoClient.connect();
         // get reference to database via name
         let db = mongoClient.db(DB_NAME);
-        let techArray = await db.collection("technologies").find().sort("name",1).toArray();
-        let json = { "technologies": techArray };
+        let photoArray = await db.collection("photos").find().sort("name",1).toArray();
+        let json = { "photos": photoArray };
         // serializes sampleJSON to string format
         response.status(200);
         response.send(json);
@@ -53,35 +52,21 @@ app.post("/post", async (request, response) => {
 
     try {
         await mongoClient.connect();
-
-        // console.log("BEFORE");
-        // console.log(request.body.name);
-        // console.log(request.body.description);
-        // // sanitizing JSON data
-        // request.body.name = request.sanitize(request.body.name);
-        // request.body.description = request.sanitize(request.body.description);
-        // console.log("AFTER");
-        // console.log(request.body.name);
-        // console.log(request.body.description);
-
         // sanitize form input
-        request.body.name = request.sanitize(request.body.name);
-        request.body.description = request.sanitize(request.body.description);
-        request.body.difficulty = request.sanitize(request.body.difficulty);
-        request.body.courses.forEach(course => {
-            course.code = request.sanitize(course.code);
-            course.name = request.sanitize(course.name);
+        request.body.title = request.sanitize(request.body.title);
+        request.body.caption = request.sanitize(request.body.caption);
+        request.body.source = request.sanitize(request.body.source);
+        request.body.comments.forEach(comment => {
+            comment.comment = request.sanitize(comment.comment);
+            comment.author = request.sanitize(comment.author);
         });
-
         // get reference to collection
-        let techCollection = mongoClient.db(DB_NAME).collection("technologies");
+        let photoAlbum = mongoClient.db(DB_NAME).collection("photos");
         // add new technology document into collection
-        let result = await techCollection.insertOne(request.body);
-
+        let result = await photoAlbum.insertOne(request.body);
         // status code
         response.status(200);
         response.send(result);
-
     } catch (error) {
         console.log(`>>> ERROR : ${error.message}`);
         response.status(500);
@@ -102,35 +87,30 @@ app.put("/put/:id", async (request, response) => {
         await mongoClient.connect();
 
         // sanitize form input
-        request.body.name = request.sanitize(request.body.name);
-        request.body.description = request.sanitize(request.body.description);
-        request.body.difficulty = request.sanitize(request.body.difficulty);
-        request.body.courses.forEach(course => {
-            course.code = request.sanitize(course.code);
-            course.name = request.sanitize(course.name);
+        request.body.title = request.sanitize(request.body.title);
+        request.body.caption = request.sanitize(request.body.caption);
+        request.body.source = request.sanitize(request.body.source);
+        request.body.comments.forEach(comment => {
+            comment.comment = request.sanitize(comment.comment);
+            comment.author = request.sanitize(comment.author);
         });
-
         // get reference to collection
-        let techCollection = mongoClient.db(DB_NAME).collection("technologies");
+        let photoAlbum = mongoClient.db(DB_NAME).collection("photos");
         // setup the update query
         let selector = {"_id" : id};
-        // let newValues = { $set : {"name":request.body.name, "description":request.body.description, "difficulty":request.body.difficulty, "courses":request.body.courses}};
         let newValues = { $set : request.body};
-
         // make it happen
-        let result = await techCollection.updateOne(selector, newValues);
+        let result = await photoAlbum.updateOne(selector, newValues);
 
         if (result.matchedCount <= 0) {
             response.status(404);
-            response.send({error: "No technology documents found with ID"});
+            response.send({error: "No photos documents found with ID"});
             mongoClient.close();
             return;
         }
-
         // status code
         response.status(200);
         response.send(result);
-
     } catch (error) {
         console.log(`>>> ERROR : ${error.message}`);
         response.status(500);
