@@ -27,7 +27,6 @@ app.use("/", express.static(CLIENT_BUILD_PATH));
 app.get("/get", async (request, response) => {
     // construct a MongoClient object, passing in additional options
     let mongoClient = new MongoClient(URL, { useUnifiedTopology: true });
-
     try {
         await mongoClient.connect();
         // get reference to database via name
