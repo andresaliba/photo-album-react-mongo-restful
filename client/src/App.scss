@@ -1,0 +1,95 @@
+@import "./globals";
+
+@mixin button-bg($bg) {
+  background: $bg;
+  &:hover {
+    background: darken($bg, 8%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background: darken($bg, 60%);
+  }
+}
+
+.main {
+  @include display-flex();
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  @include display-flex();
+  flex-flow: row wrap;
+  align-items: flex-end;
+  padding-bottom: 5px;
+}
+
+.header--title {
+  font-size: 30px;
+  padding-right: 10px;
+  font-weight: normal;
+}
+
+.header--subtitle {
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+.nav {
+  @include display-flex();
+  flex-flow: column nowrap;
+  padding-bottom: 20px
+}
+
+.nav--controls {
+  @include display-flex();
+  flex-direction: row wrap;
+  align-items: center;
+  // padding-top: 10px;
+}
+
+
+
+.thumbnail--photo {
+  :hover {
+    background: darken(red, 8%);
+    transition: all 0.3s ease;
+  }
+}
+
+.btn {
+
+  border: none;
+  color: white;
+  padding: 6px 8px ;
+  text-align: center;
+  font-size: 12px;
+  text-decoration: none;
+  margin-right: 3px;
+  border-radius: 2px;
+}
+
+button:disabled,
+button[disabled]{
+  border: #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  pointer-events: none;
+  &:hover {
+    pointer-events: none;
+  }
+}
+
+.btn-blue {
+  @include button-bg(#428bca);
+}
+
+.btn-yellow {
+  @include button-bg(#FFBB33);
+}
+
+a:hover {
+  background-color: yellow;
+
+}

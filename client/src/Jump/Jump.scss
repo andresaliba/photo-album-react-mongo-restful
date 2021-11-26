@@ -1,0 +1,24 @@
+@import "./../_globals";
+
+.nav--jump {
+    @include display-flex();
+    flex-direction: row;
+    margin-top: 10px;
+    img {
+        border-radius: 5px;
+        margin: 3px;
+        width: 75px;
+        height: 56px;
+        opacity: .7;
+        transition: .4s ease;
+        backface-visibility: hidden;
+        &:hover {
+            opacity: 0.2;
+        }
+    }
+}
+
+a:hover {
+    background-color: yellow;
+
+}
