@@ -24,7 +24,7 @@ import { PhotosData, Photo } from "./tools/photos.model";
 // -------------------------------------------------------------------------------------------------
 
 // WEB API
-const PHOTOS_WEB_API: string = "http://localhost/8080/get";
+const PHOTOS_WEB_API: string = "http://localhost:8080/get";
 
 
 const App = () => {
@@ -77,13 +77,9 @@ const App = () => {
 
   // --------------------------------------------------------------------- lifecycle hooks
   useEffect(() => {
-    // getJSONData(PHOTOS_WEB_API, onResponse, onError);
     // component mounted - loading JSON data when root component mounts
     refreshJSON();
   }, []);
-
-  // useEffect(() => {
-  // }, [currentPhoto]);
 
   // --------------------------------------------------------------------- render to DOM
   return (

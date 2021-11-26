@@ -56,9 +56,9 @@ app.post("/post", async (request, response) => {
     request.body.comment = request.sanitize(request.body.comment);
     request.body.author = request.sanitize(request.body.author);
     // get reference to collection
-    let photoCollection = mongoClient.db(DB_NAME).collection("photos");
+    let commentsCollection = mongoClient.db(DB_NAME).collection("photos");
     // add new technology document into collection
-    let result = await photoCollection.insertOne(request.body);
+    let result = await commentsCollection.insertOne(request.body);
     // status code
     response.status(200);
     response.send(result);
