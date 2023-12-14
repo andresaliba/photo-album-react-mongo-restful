@@ -1,7 +1,8 @@
 <!--
---- Readme.md Snippet without images Start ---
+&lt;--- Readme.md Snippet without images Start ---&gt;
 ## Tech Stack
 andresaliba/photo-album-react-mongo-restful is built on the following main stack:
+
 - [Coveralls](https://coveralls.io/) – Code Coverage
 - [Jest](http://facebook.github.io/jest/) – Javascript Testing Framework
 - [Mocha](http://mochajs.org/) – Javascript Testing Framework
@@ -9,6 +10,7 @@ andresaliba/photo-album-react-mongo-restful is built on the following main stack
 - [React](https://reactjs.org/) – Javascript UI Libraries
 - [MongoDB](http://www.mongodb.com/) – Databases
 - [ExpressJS](http://expressjs.com/) – Microframeworks (Backend)
+- [Sass](http://sass-lang.com/) – CSS Pre-processors / Extensions
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
 - [TypeScript](http://www.typescriptlang.org) – Languages
 - [Babel](http://babeljs.io/) – JavaScript Compilers
@@ -16,14 +18,18 @@ andresaliba/photo-album-react-mongo-restful is built on the following main stack
 - [React Router](https://github.com/rackt/react-router) – JavaScript Framework Components
 - [nodemon](http://nodemon.io/) – node.js Application Monitoring
 - [React Navigation](https://reactnavigation.org/) – Cross-Platform Mobile Tools
+- [LangChain](https://github.com/hwchase17/langchain) – Large Language Model Tools
+- [pgvector](https://github.com/pgvector/pgvector/) – Database Tools
 - [Docker](https://www.docker.com/) – Virtual Machine Platforms & Containers
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet without images End ---
 
---- Readme.md Snippet with images Start ---
+&lt;--- Readme.md Snippet without images End ---&gt;
+
+&lt;--- Readme.md Snippet with images Start ---&gt;
 ## Tech Stack
 andresaliba/photo-album-react-mongo-restful is built on the following main stack:
+
 - <img width='25' height='25' src='https://img.stackshare.io/service/680/a43e4a04cb9f778842de43f95db59a14.png' alt='Coveralls'/> [Coveralls](https://coveralls.io/) – Code Coverage
 - <img width='25' height='25' src='https://img.stackshare.io/service/830/jest.png' alt='Jest'/> [Jest](http://facebook.github.io/jest/) – Javascript Testing Framework
 - <img width='25' height='25' src='https://img.stackshare.io/service/832/mocha.png' alt='Mocha'/> [Mocha](http://mochajs.org/) – Javascript Testing Framework
@@ -31,6 +37,7 @@ andresaliba/photo-album-react-mongo-restful is built on the following main stack
 - <img width='25' height='25' src='https://img.stackshare.io/service/1020/OYIaJ1KK.png' alt='React'/> [React](https://reactjs.org/) – Javascript UI Libraries
 - <img width='25' height='25' src='https://img.stackshare.io/service/1030/leaf-360x360.png' alt='MongoDB'/> [MongoDB](http://www.mongodb.com/) – Databases
 - <img width='25' height='25' src='https://img.stackshare.io/service/1163/hashtag.png' alt='ExpressJS'/> [ExpressJS](http://expressjs.com/) – Microframeworks (Backend)
+- <img width='25' height='25' src='https://img.stackshare.io/service/1171/jCR2zNJV.png' alt='Sass'/> [Sass](http://sass-lang.com/) – CSS Pre-processors / Extensions
 - <img width='25' height='25' src='https://img.stackshare.io/service/1209/javascript.jpeg' alt='JavaScript'/> [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/1612/bynNY5dJ.jpg' alt='TypeScript'/> [TypeScript](http://www.typescriptlang.org) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/2739/-1wfGjNw.png' alt='Babel'/> [Babel](http://babeljs.io/) – JavaScript Compilers
@@ -38,17 +45,20 @@ andresaliba/photo-album-react-mongo-restful is built on the following main stack
 - <img width='25' height='25' src='https://img.stackshare.io/service/3350/8261421.png' alt='React Router'/> [React Router](https://github.com/rackt/react-router) – JavaScript Framework Components
 - <img width='25' height='25' src='https://img.stackshare.io/service/5577/preview.png' alt='nodemon'/> [nodemon](http://nodemon.io/) – node.js Application Monitoring
 - <img width='25' height='25' src='https://img.stackshare.io/service/6422/react-navigation.png' alt='React Navigation'/> [React Navigation](https://reactnavigation.org/) – Cross-Platform Mobile Tools
+- <img width='25' height='25' src='https://img.stackshare.io/service/48790/default_5b6c6b73f1ff3775c85d2a1ba954cb87e30cbf13.jpg' alt='LangChain'/> [LangChain](https://github.com/hwchase17/langchain) – Large Language Model Tools
+- <img width='25' height='25' src='https://img.stackshare.io/service/109221/default_b888cdf5617d936aa6aacf130911906955508639.png' alt='pgvector'/> [pgvector](https://github.com/pgvector/pgvector/) – Database Tools
 - <img width='25' height='25' src='https://img.stackshare.io/service/586/n4u37v9t_400x400.png' alt='Docker'/> [Docker](https://www.docker.com/) – Virtual Machine Platforms & Containers
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet with images End ---
+
+&lt;--- Readme.md Snippet with images End ---&gt;
 -->
 <div align="center">
 
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [andresaliba/photo-album-react-mongo-restful](https://github.com/andresaliba/photo-album-react-mongo-restful)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|51<br/>Tools used|11/09/23 <br/>Report generated|
+|54<br/>Tools used|12/14/23 <br/>Report generated|
 |------|------|
 </div>
 
@@ -73,7 +83,7 @@ Full tech stack [here](/techstack.md)
 </tr>
 </table>
 
-## <img src='https://img.stackshare.io/frameworks.svg'/> Frameworks (4)
+## <img src='https://img.stackshare.io/frameworks.svg'/> Frameworks (5)
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/1163/hashtag.png' alt='ExpressJS'>
@@ -107,15 +117,31 @@ Full tech stack [here](/techstack.md)
   <sub>v5.2.1</sub>
 </td>
 
+<td align='center'>
+  <img width='36' height='36' src='https://img.stackshare.io/service/1171/jCR2zNJV.png' alt='Sass'>
+  <br>
+  <sub><a href="http://sass-lang.com/">Sass</a></sub>
+  <br>
+  <sub></sub>
+</td>
+
 </tr>
 </table>
 
-## <img src='https://img.stackshare.io/databases.svg'/> Data (1)
+## <img src='https://img.stackshare.io/databases.svg'/> Data (2)
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/1030/leaf-360x360.png' alt='MongoDB'>
   <br>
   <sub><a href="http://www.mongodb.com/">MongoDB</a></sub>
+  <br>
+  <sub>v4.2.0</sub>
+</td>
+
+<td align='center'>
+  <img width='36' height='36' src='https://img.stackshare.io/service/109221/default_b888cdf5617d936aa6aacf130911906955508639.png' alt='pgvector'>
+  <br>
+  <sub><a href="https://github.com/pgvector/pgvector/">pgvector</a></sub>
   <br>
   <sub></sub>
 </td>
@@ -202,9 +228,25 @@ Full tech stack [here](/techstack.md)
 </tr>
 </table>
 
-## Other (3)
+## Other (6)
 <table><tr>
   <td align='center'>
+  <img width='36' height='36' src='https://img.stackshare.io/service/2270/no-img-open-source.png' alt='HTML'>
+  <br>
+  <sub><a href="http://">HTML</a></sub>
+  <br>
+  <sub></sub>
+</td>
+
+<td align='center'>
+  <img width='36' height='36' src='https://img.stackshare.io/service/48790/default_5b6c6b73f1ff3775c85d2a1ba954cb87e30cbf13.jpg' alt='LangChain'>
+  <br>
+  <sub><a href="https://github.com/hwchase17/langchain">LangChain</a></sub>
+  <br>
+  <sub></sub>
+</td>
+
+<td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/3519/3wgIDj3j_normal.png' alt='Mongo'>
   <br>
   <sub><a href="http://wedesignapps.herokuapp.com">Mongo</a></sub>
@@ -228,13 +270,21 @@ Full tech stack [here](/techstack.md)
   <sub></sub>
 </td>
 
+<td align='center'>
+  <img width='36' height='36' src='https://img.stackshare.io/service/4535/no-img-open-source.png' alt='xo'>
+  <br>
+  <sub><a href="https://www.npmjs.com/package/xo">xo</a></sub>
+  <br>
+  <sub></sub>
+</td>
+
 </tr>
 </table>
 
 
-## <img src='https://img.stackshare.io/group.svg' /> Open source packages (32)</h2>
+## <img src='https://img.stackshare.io/group.svg' /> Open source packages (30)</h2>
 
-## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (32)
+## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (30)
 
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
@@ -264,14 +314,12 @@ Full tech stack [here](/techstack.md)
 |[react-dom](https://www.npmjs.com/react-dom)|v17.0.2|11/26/21|Andre Saliba |MIT|N/A|
 |[react-router-dom](https://www.npmjs.com/react-router-dom)|v5.3.0|11/26/21|Andre Saliba |MIT|N/A|
 |[react-scripts](https://www.npmjs.com/react-scripts)|v4.0.3|11/26/21|Andre Saliba |MIT|N/A|
-|[sass](https://www.npmjs.com/sass)|v1.42.1|11/26/21|Andre Saliba |MIT|N/A|
 |[string-width](https://www.npmjs.com/string-width)|v4.2.2|11/26/21|Andre Saliba |MIT|N/A|
 |[strip-ansi](https://www.npmjs.com/strip-ansi)|v3.0.1|11/26/21|Andre Saliba |MIT|N/A|
 |[tap](https://www.npmjs.com/tap)|v14.10.7|11/26/21|Andre Saliba |ISC|N/A|
 |[tsd](https://www.npmjs.com/tsd)|v0.10.0|11/26/21|Andre Saliba |MIT|N/A|
-|[xo](https://www.npmjs.com/xo)|v0.24.0|11/26/21|Andre Saliba |MIT|N/A|
 
 <br/>
 <div align='center'>
 
-Generated via [Stack File](https://github.com/apps/stack-file)
+Generated via [Stack File](https://github.com/marketplace/stack-file)
