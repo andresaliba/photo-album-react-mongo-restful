@@ -58,7 +58,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [andresaliba/photo-album-react-mongo-restful](https://github.com/andresaliba/photo-album-react-mongo-restful)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|54<br/>Tools used|12/14/23 <br/>Report generated|
+|56<br/>Tools used|01/04/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -282,9 +282,9 @@ Full tech stack [here](/techstack.md)
 </table>
 
 
-## <img src='https://img.stackshare.io/group.svg' /> Open source packages (30)</h2>
+## <img src='https://img.stackshare.io/group.svg' /> Open source packages (32)</h2>
 
-## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (30)
+## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (32)
 
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
@@ -302,6 +302,7 @@ Full tech stack [here](/techstack.md)
 |[ansi-styles](https://www.npmjs.com/ansi-styles)|v4.3.0|11/26/21|Andre Saliba |MIT|N/A|
 |[ava](https://www.npmjs.com/ava)|v1.3.1|11/26/21|Andre Saliba |MIT|N/A|
 |[benchmark](https://www.npmjs.com/benchmark)|v2.1.4|11/26/21|Andre Saliba |MIT|N/A|
+|[chalk](https://www.npmjs.com/chalk)|v4.1.2|11/26/21|Andre Saliba |MIT|N/A|
 |[cors](https://www.npmjs.com/cors)|v2.8.5|11/26/21|Andre Saliba |MIT|N/A|
 |[eslint-plugin-import](https://www.npmjs.com/eslint-plugin-import)|v2.24.2|11/26/21|Andre Saliba |MIT|N/A|
 |[eslint-plugin-node](https://www.npmjs.com/eslint-plugin-node)|v11.1.0|11/26/21|Andre Saliba |MIT|N/A|
@@ -318,6 +319,7 @@ Full tech stack [here](/techstack.md)
 |[strip-ansi](https://www.npmjs.com/strip-ansi)|v3.0.1|11/26/21|Andre Saliba |MIT|N/A|
 |[tap](https://www.npmjs.com/tap)|v14.10.7|11/26/21|Andre Saliba |ISC|N/A|
 |[tsd](https://www.npmjs.com/tsd)|v0.10.0|11/26/21|Andre Saliba |MIT|N/A|
+|[xo](https://www.npmjs.com/xo)|v0.24.0|11/26/21|Andre Saliba |MIT|N/A|
 
 <br/>
 <div align='center'>
